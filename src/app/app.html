@@ -1,32 +1,32 @@
-<header class="bg-white shadow-md fixed w-full z-50">
+<header class="fixed w-full z-50 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 shadow-lg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       
       <!-- Logo -->
-      <h1 class="text-2xl font-bold text-blue-600">
+      <h1 class="text-2xl font-extrabold text-white tracking-wide">
         {{ title() }}
       </h1>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6">
-        <a routerLink="/home" routerLinkActive="text-blue-600 font-semibold"
-           class="text-gray-700 hover:text-blue-500 transition">Home</a>
-        <a routerLink="/projects" routerLinkActive="text-blue-600 font-semibold"
-           class="text-gray-700 hover:text-blue-500 transition">Projects</a>
-        <a routerLink="/skills" routerLinkActive="text-blue-600 font-semibold"
-           class="text-gray-700 hover:text-blue-500 transition">Skills</a>
-        <a routerLink="/contact" routerLinkActive="text-blue-600 font-semibold"
-           class="text-gray-700 hover:text-blue-500 transition">Contact</a>
+        <a routerLink="/home" routerLinkActive="text-white border-b-2 border-white"
+           class="text-gray-200 hover:text-white hover:border-b-2 hover:border-white transition">Home</a>
+        <a routerLink="/projects" routerLinkActive="text-white border-b-2 border-white"
+           class="text-gray-200 hover:text-white hover:border-b-2 hover:border-white transition">Projects</a>
+        <a routerLink="/skills" routerLinkActive="text-white border-b-2 border-white"
+           class="text-gray-200 hover:text-white hover:border-b-2 hover:border-white transition">Skills</a>
+        <a routerLink="/contact" routerLinkActive="text-white border-b-2 border-white"
+           class="text-gray-200 hover:text-white hover:border-b-2 hover:border-white transition">Contact</a>
       </nav>
 
       <!-- Mobile Hamburger -->
       <div class="md:hidden">
         <button (click)="toggleMenu()" class="focus:outline-none">
-          <svg *ngIf="!menuOpen" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg *ngIf="!menuOpen" class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <svg *ngIf="menuOpen" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg *ngIf="menuOpen" class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -36,16 +36,16 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div *ngIf="menuOpen" class="md:hidden bg-white shadow-md">
-    <nav class="flex flex-col space-y-2 px-4 py-3">
-      <a routerLink="/home" routerLinkActive="text-blue-600 font-semibold"
-         class="text-gray-700 hover:text-blue-500 transition">Home</a>
-      <a routerLink="/projects" routerLinkActive="text-blue-600 font-semibold"
-         class="text-gray-700 hover:text-blue-500 transition">Projects</a>
-      <a routerLink="/skills" routerLinkActive="text-blue-600 font-semibold"
-         class="text-gray-700 hover:text-blue-500 transition">Skills</a>
-      <a routerLink="/contact" routerLinkActive="text-blue-600 font-semibold"
-         class="text-gray-700 hover:text-blue-500 transition">Contact</a>
+  <div *ngIf="menuOpen" class="md:hidden bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 shadow-lg">
+    <nav class="flex flex-col space-y-3 px-4 py-4">
+      <a routerLink="/home" routerLinkActive="text-white font-semibold"
+         class="text-gray-200 hover:text-white transition">Home</a>
+      <a routerLink="/projects" routerLinkActive="text-white font-semibold"
+         class="text-gray-200 hover:text-white transition">Projects</a>
+      <a routerLink="/skills" routerLinkActive="text-white font-semibold"
+         class="text-gray-200 hover:text-white transition">Skills</a>
+      <a routerLink="/contact" routerLinkActive="text-white font-semibold"
+         class="text-gray-200 hover:text-white transition">Contact</a>
     </nav>
   </div>
 </header>

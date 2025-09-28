@@ -1,10 +1,66 @@
-<section class="p-8 bg-gray-100">
-  <h2 class="text-3xl font-bold mb-6">Skills</h2>
-  <div class="flex flex-wrap gap-4">
-    <span class="px-4 py-2 bg-blue-200 rounded-full">Angular</span>
-    <span class="px-4 py-2 bg-green-200 rounded-full">TypeScript</span>
-    <span class="px-4 py-2 bg-yellow-200 rounded-full">Tailwind CSS</span>
-    <span class="px-4 py-2 bg-red-200 rounded-full">Node.js</span>
-    <!-- Add more skills -->
+<section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden">
+
+  <!-- Vanta 3D Network Background -->
+  <app-skills-background></app-skills-background>
+  <!-- Title -->
+  <h2 class="relative z-10 text-4xl md:text-5xl font-bold mb-16
+             bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 
+             bg-clip-text text-transparent tracking-wide drop-shadow-lg
+             font-sans leading-snug
+             after:content-[''] after:block after:w-20 after:h-1 after:rounded-full
+             after:bg-gradient-to-r after:from-purple-500 after:to-blue-500
+             after:mx-auto after:mt-6">
+    My Skills
+  </h2>
+
+  <!-- Skills Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl w-full z-10 relative">
+    <div *ngFor="let skill of skills" 
+         (click)="openSkill(skill.id)"
+         class="cursor-pointer relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+      <div class="w-14 h-14 flex items-center justify-center rounded-xl text-white mx-auto mb-6 shadow-md"
+           [ngClass]="skill.gradient">
+        <i [class]="skill.icon + ' text-2xl'"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-3">{{ skill.name }}</h3>
+    </div>
   </div>
+
+  <!-- Modal for Technologies -->
+  <!-- Modal for Technologies -->
+<div *ngIf="selectedSkill() as skillId"
+     class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+     (click)="closeModal()">
+  
+  <!-- Centered Card -->
+  <div class="bg-white rounded-3xl max-w-4xl w-full p-8 relative shadow-2xl"
+       (click)="$event.stopPropagation()">
+       
+    <!-- Close Button -->
+    <button (click)="closeModal()" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+      <i class="fas fa-times text-2xl"></i>
+    </button>
+
+    <h3 class="text-2xl font-bold mb-6 text-gray-900">
+      {{ selectedSkillName }} Tech Stack
+    </h3>
+
+    <!-- Tech Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+  <div *ngFor="let tech of techs[skillId]" class="flex flex-col items-center justify-center">
+    <img 
+      [src]="tech.logo" 
+      alt="{{ tech.name }}" 
+      class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain mb-3 transition-transform duration-300 hover:scale-110"
+    >
+    <span class="text-gray-800 font-medium text-sm sm:text-base">{{ tech.name }}</span>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
+
 </section>

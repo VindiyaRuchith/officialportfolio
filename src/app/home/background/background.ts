@@ -20,13 +20,10 @@ export class BackgroundComponent implements AfterViewInit, OnDestroy {
         minWidth: 200,
         scale: 1.0,
         scaleMobile: 1.0,
-  
-        // Color theme: purple-blue-violet
-      color: 0x8a2be2,          // main nodes color (blue-violet)
-      backgroundColor: 0x2a1a4d, // dark purple background
-      points: 15.0,              // optional tweak: increase node density
-      maxDistance: 25.0,         // optional: distance between nodes
-      spacing: 15.0,             // optional: controls mesh detail
+        backgroundColor: 0x0f172a, // slate-900 dark background
+      color: 0x7c3aed,           // violet
+      color2: 0x2563eb,          // blue
+      size: 1.2,
       materialOptions: { vertexColors: true }
     });
 
