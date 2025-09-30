@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class App {
   menuOpen = false;
-  protected readonly title = signal("Vindiya's Portfolio");
+  protected readonly title = signal("Vindiya Wickramathunga");
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }

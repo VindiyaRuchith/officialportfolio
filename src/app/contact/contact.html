@@ -1,11 +1,71 @@
-<section class="p-8 bg-white">
-  <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="flex flex-col gap-4 max-w-md">
-    <input type="text" name="name" placeholder="Your Name" class="p-2 border rounded">
-    <input type="email" name="email" placeholder="Your Email" class="p-2 border rounded">
-    <textarea name="message" placeholder="Your Message" class="p-2 border rounded"></textarea>
-    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-      Send Message
-    </button>
-  </form>
+<section class="relative min-h-screen flex items-center justify-center px-6 py-20 text-white">
+  <!-- Background -->
+  <app-net-background></app-net-background>
+
+  <!-- Contact Card -->
+  <div class="relative z-10 w-full max-w-5xl bg-white/10 backdrop-blur-md shadow-2xl rounded-2xl p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+    
+    <!-- Left: Profile Section -->
+    <div class="flex flex-col items-center justify-center text-center space-y-6">
+      <img src="assets/images/profile.jpeg" alt="Vindiya Wickramathunga"
+           class="w-40 h-40 rounded-full shadow-lg border-4 border-cyan-400 object-cover">
+      
+      <h3 class="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500 bg-clip-text text-transparent">
+        Vindiya Wickramathunga
+      </h3>
+      <p class="text-gray-300">
+        Software Engineer | Full-Stack Developer  
+        Passionate about building modern, scalable applications 🚀
+      </p>
+
+      <!-- Social Links -->
+      <div class="flex justify-center space-x-6">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-cyan-400 hover:text-cyan-300 text-2xl">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/yourprofile" target="_blank" class="text-gray-300 hover:text-white text-2xl">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:your@email.com" class="text-pink-400 hover:text-pink-300 text-2xl">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="flex flex-col justify-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left
+                 bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500 
+                 bg-clip-text text-transparent drop-shadow-lg">
+        Get in Touch
+      </h2>
+
+      <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)" class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-2">Name</label>
+          <input id="name" name="user_name" type="text" [(ngModel)]="formData.name" required
+            placeholder="Your Name"
+            class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-cyan-400 outline-none" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+          <input id="email" name="user_email" type="email" [(ngModel)]="formData.email" required
+            placeholder="you@example.com"
+            class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-cyan-400 outline-none" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+          <textarea id="message" name="message" rows="5" [(ngModel)]="formData.message" required
+            placeholder="Write your message..."
+            class="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-cyan-400 outline-none"></textarea>
+        </div>
+
+        <!-- Send Button -->
+        <button type="submit"
+          class="w-full py-3 font-semibold text-white rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-600 shadow-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
